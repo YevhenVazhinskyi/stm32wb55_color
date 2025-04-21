@@ -1,0 +1,5 @@
+r
+loadfile build/stm32wb55_color.hex
+g
+exit
+
