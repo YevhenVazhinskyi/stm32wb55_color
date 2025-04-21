@@ -1,0 +1,257 @@
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"system_clock_config.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/MyDriver/clock/system_clock_config.c"
+  20              		.section	.text.SystemClock_Config,"ax",%progbits
+  21              		.align	1
+  22              		.global	SystemClock_Config
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	SystemClock_Config:
+  28              	.LFB950:
+   1:Drivers/MyDriver/clock/system_clock_config.c **** 
+   2:Drivers/MyDriver/clock/system_clock_config.c **** #include "system_clock_config.h"
+   3:Drivers/MyDriver/clock/system_clock_config.c **** #include "main.h"
+   4:Drivers/MyDriver/clock/system_clock_config.c **** 
+   5:Drivers/MyDriver/clock/system_clock_config.c **** void SystemClock_Config(void)
+   6:Drivers/MyDriver/clock/system_clock_config.c **** {
+  29              		.loc 1 6 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 104
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  38 0002 9AB0     		sub	sp, sp, #104
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 112
+   7:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  41              		.loc 1 7 3 view .LVU1
+  42              		.loc 1 7 22 is_stmt 0 view .LVU2
+  43 0004 08AC     		add	r4, sp, #32
+  44 0006 4822     		movs	r2, #72
+  45 0008 0021     		movs	r1, #0
+  46 000a 2046     		mov	r0, r4
+  47 000c FFF7FEFF 		bl	memset
+  48              	.LVL0:
+   8:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  49              		.loc 1 8 3 is_stmt 1 view .LVU3
+  50              		.loc 1 8 22 is_stmt 0 view .LVU4
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 2
+
+
+  51 0010 0023     		movs	r3, #0
+  52 0012 0193     		str	r3, [sp, #4]
+  53 0014 0293     		str	r3, [sp, #8]
+  54 0016 0393     		str	r3, [sp, #12]
+  55 0018 0493     		str	r3, [sp, #16]
+  56 001a 0593     		str	r3, [sp, #20]
+  57 001c 0693     		str	r3, [sp, #24]
+  58 001e 0793     		str	r3, [sp, #28]
+   9:Drivers/MyDriver/clock/system_clock_config.c **** 
+  10:Drivers/MyDriver/clock/system_clock_config.c ****   /** Configure the main internal regulator output voltage
+  11:Drivers/MyDriver/clock/system_clock_config.c ****   */
+  12:Drivers/MyDriver/clock/system_clock_config.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  59              		.loc 1 12 3 is_stmt 1 view .LVU5
+  60              	.LBB2:
+  61              		.loc 1 12 3 view .LVU6
+  62              		.loc 1 12 3 view .LVU7
+  63 0020 1A49     		ldr	r1, .L7
+  64 0022 0A68     		ldr	r2, [r1]
+  65 0024 22F4C062 		bic	r2, r2, #1536
+  66 0028 42F40072 		orr	r2, r2, #512
+  67 002c 0A60     		str	r2, [r1]
+  68              		.loc 1 12 3 view .LVU8
+  69 002e 0A68     		ldr	r2, [r1]
+  70 0030 02F4C062 		and	r2, r2, #1536
+  71 0034 0092     		str	r2, [sp]
+  72              		.loc 1 12 3 view .LVU9
+  73 0036 009A     		ldr	r2, [sp]
+  74              	.LBE2:
+  75              		.loc 1 12 3 view .LVU10
+  13:Drivers/MyDriver/clock/system_clock_config.c **** 
+  14:Drivers/MyDriver/clock/system_clock_config.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+  15:Drivers/MyDriver/clock/system_clock_config.c ****   * in the RCC_OscInitTypeDef structure.
+  16:Drivers/MyDriver/clock/system_clock_config.c ****   */
+  17:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE
+  76              		.loc 1 17 3 view .LVU11
+  77              		.loc 1 17 36 is_stmt 0 view .LVU12
+  78 0038 2322     		movs	r2, #35
+  79 003a 0892     		str	r2, [sp, #32]
+  18:Drivers/MyDriver/clock/system_clock_config.c ****                               |RCC_OSCILLATORTYPE_MSI;
+  19:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  80              		.loc 1 19 3 is_stmt 1 view .LVU13
+  81              		.loc 1 19 30 is_stmt 0 view .LVU14
+  82 003c 4FF48032 		mov	r2, #65536
+  83 0040 0992     		str	r2, [sp, #36]
+  20:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  84              		.loc 1 20 3 is_stmt 1 view .LVU15
+  85              		.loc 1 20 30 is_stmt 0 view .LVU16
+  86 0042 4FF48072 		mov	r2, #256
+  87 0046 0B92     		str	r2, [sp, #44]
+  21:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.MSIState = RCC_MSI_ON;
+  88              		.loc 1 21 3 is_stmt 1 view .LVU17
+  89              		.loc 1 21 30 is_stmt 0 view .LVU18
+  90 0048 0122     		movs	r2, #1
+  91 004a 0F92     		str	r2, [sp, #60]
+  22:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  92              		.loc 1 22 3 is_stmt 1 view .LVU19
+  93              		.loc 1 22 41 is_stmt 0 view .LVU20
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 3
+
+
+  94 004c 4022     		movs	r2, #64
+  95 004e 0C92     		str	r2, [sp, #48]
+  23:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
+  96              		.loc 1 23 3 is_stmt 1 view .LVU21
+  97              		.loc 1 23 41 is_stmt 0 view .LVU22
+  98 0050 1093     		str	r3, [sp, #64]
+  24:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_10;
+  99              		.loc 1 24 3 is_stmt 1 view .LVU23
+ 100              		.loc 1 24 35 is_stmt 0 view .LVU24
+ 101 0052 A022     		movs	r2, #160
+ 102 0054 1192     		str	r2, [sp, #68]
+  25:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 103              		.loc 1 25 3 is_stmt 1 view .LVU25
+ 104              		.loc 1 25 34 is_stmt 0 view .LVU26
+ 105 0056 1393     		str	r3, [sp, #76]
+  26:Drivers/MyDriver/clock/system_clock_config.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 106              		.loc 1 26 3 is_stmt 1 view .LVU27
+ 107              		.loc 1 26 7 is_stmt 0 view .LVU28
+ 108 0058 2046     		mov	r0, r4
+ 109 005a FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 110              	.LVL1:
+ 111              		.loc 1 26 6 discriminator 1 view .LVU29
+ 112 005e 78B9     		cbnz	r0, .L5
+ 113              	.L2:
+  27:Drivers/MyDriver/clock/system_clock_config.c ****   {
+  28:Drivers/MyDriver/clock/system_clock_config.c ****     Error_Handler();
+  29:Drivers/MyDriver/clock/system_clock_config.c ****   }
+  30:Drivers/MyDriver/clock/system_clock_config.c **** 
+  31:Drivers/MyDriver/clock/system_clock_config.c ****   /** Configure the SYSCLKSource, HCLK, PCLK1 and PCLK2 clocks dividers
+  32:Drivers/MyDriver/clock/system_clock_config.c ****   */
+  33:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK4|RCC_CLOCKTYPE_HCLK2
+ 114              		.loc 1 33 3 is_stmt 1 view .LVU30
+ 115              		.loc 1 33 31 is_stmt 0 view .LVU31
+ 116 0060 6F23     		movs	r3, #111
+ 117 0062 0193     		str	r3, [sp, #4]
+  34:Drivers/MyDriver/clock/system_clock_config.c ****                               |RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+  35:Drivers/MyDriver/clock/system_clock_config.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  36:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_MSI;
+ 118              		.loc 1 36 3 is_stmt 1 view .LVU32
+ 119              		.loc 1 36 34 is_stmt 0 view .LVU33
+ 120 0064 0023     		movs	r3, #0
+ 121 0066 0293     		str	r3, [sp, #8]
+  37:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 122              		.loc 1 37 3 is_stmt 1 view .LVU34
+ 123              		.loc 1 37 35 is_stmt 0 view .LVU35
+ 124 0068 0393     		str	r3, [sp, #12]
+  38:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 125              		.loc 1 38 3 is_stmt 1 view .LVU36
+ 126              		.loc 1 38 36 is_stmt 0 view .LVU37
+ 127 006a 0493     		str	r3, [sp, #16]
+  39:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 128              		.loc 1 39 3 is_stmt 1 view .LVU38
+ 129              		.loc 1 39 36 is_stmt 0 view .LVU39
+ 130 006c 0593     		str	r3, [sp, #20]
+  40:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.AHBCLK2Divider = RCC_SYSCLK_DIV1;
+ 131              		.loc 1 40 3 is_stmt 1 view .LVU40
+ 132              		.loc 1 40 36 is_stmt 0 view .LVU41
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 4
+
+
+ 133 006e 0693     		str	r3, [sp, #24]
+  41:Drivers/MyDriver/clock/system_clock_config.c ****   RCC_ClkInitStruct.AHBCLK4Divider = RCC_SYSCLK_DIV1;
+ 134              		.loc 1 41 3 is_stmt 1 view .LVU42
+ 135              		.loc 1 41 36 is_stmt 0 view .LVU43
+ 136 0070 0793     		str	r3, [sp, #28]
+  42:Drivers/MyDriver/clock/system_clock_config.c **** 
+  43:Drivers/MyDriver/clock/system_clock_config.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+ 137              		.loc 1 43 3 is_stmt 1 view .LVU44
+ 138              		.loc 1 43 7 is_stmt 0 view .LVU45
+ 139 0072 0121     		movs	r1, #1
+ 140 0074 01A8     		add	r0, sp, #4
+ 141 0076 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 142              	.LVL2:
+ 143              		.loc 1 43 6 discriminator 1 view .LVU46
+ 144 007a 20B9     		cbnz	r0, .L6
+ 145              	.L1:
+  44:Drivers/MyDriver/clock/system_clock_config.c ****   {
+  45:Drivers/MyDriver/clock/system_clock_config.c ****     Error_Handler();
+  46:Drivers/MyDriver/clock/system_clock_config.c ****   }
+  47:Drivers/MyDriver/clock/system_clock_config.c **** }...
+ 146              		.loc 1 47 1 view .LVU47
+ 147 007c 1AB0     		add	sp, sp, #104
+ 148              	.LCFI2:
+ 149              		.cfi_remember_state
+ 150              		.cfi_def_cfa_offset 8
+ 151              		@ sp needed
+ 152 007e 10BD     		pop	{r4, pc}
+ 153              	.L5:
+ 154              	.LCFI3:
+ 155              		.cfi_restore_state
+  28:Drivers/MyDriver/clock/system_clock_config.c ****     Error_Handler();
+ 156              		.loc 1 28 5 is_stmt 1 view .LVU48
+ 157 0080 FFF7FEFF 		bl	Error_Handler
+ 158              	.LVL3:
+ 159 0084 ECE7     		b	.L2
+ 160              	.L6:
+  45:Drivers/MyDriver/clock/system_clock_config.c ****     Error_Handler();
+ 161              		.loc 1 45 5 view .LVU49
+ 162 0086 FFF7FEFF 		bl	Error_Handler
+ 163              	.LVL4:
+ 164              		.loc 1 47 1 is_stmt 0 view .LVU50
+ 165 008a F7E7     		b	.L1
+ 166              	.L8:
+ 167              		.align	2
+ 168              	.L7:
+ 169 008c 00040058 		.word	1476396032
+ 170              		.cfi_endproc
+ 171              	.LFE950:
+ 173              		.text
+ 174              	.Letext0:
+ 175              		.file 2 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+ 176              		.file 3 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+ 177              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 178              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 179              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc.h"
+ 180              		.file 7 "Core/Inc/main.h"
+ 181              		.file 8 "<built-in>"
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 5
+
+
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_clock_config.c
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s:21     .text.SystemClock_Config:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s:27     .text.SystemClock_Config:00000000 SystemClock_Config
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccZBFEm1.s:169    .text.SystemClock_Config:0000008c $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+Error_Handler

@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
   28:Core/Src/system_stm32wbxx.c ****   *        System Clock source                    | MSI
   29:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
   30:Core/Src/system_stm32wbxx.c ****   *        SYSCLK(Hz)                             | 4000000
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 2
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 2
 
 
   31:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
   85:Core/Src/system_stm32wbxx.c **** #include "stm32wbxx.h"
   86:Core/Src/system_stm32wbxx.c **** 
   87:Core/Src/system_stm32wbxx.c **** #if !defined  (HSE_VALUE)
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 3
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 3
 
 
   88:Core/Src/system_stm32wbxx.c **** #define HSE_VALUE    (32000000UL) /*!< Value of the External oscillator in Hz */
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  142:Core/Src/system_stm32wbxx.c **** #else
  143:Core/Src/system_stm32wbxx.c **** #define VECT_TAB_BASE_ADDRESS   FLASH_BASE      /*!< Vector Table base address field.
  144:Core/Src/system_stm32wbxx.c ****                                                      This value must be a multiple of 0x200. */
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 4
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 4
 
 
  145:Core/Src/system_stm32wbxx.c **** #define VECT_TAB_OFFSET         0x00000000U     /*!< Vector Table base offset field.
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  199:Core/Src/system_stm32wbxx.c **** /**
  200:Core/Src/system_stm32wbxx.c ****   * @}
  201:Core/Src/system_stm32wbxx.c ****   */
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 5
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 5
 
 
  202:Core/Src/system_stm32wbxx.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
   52              		.loc 1 232 3 is_stmt 1 view .LVU9
   53              		.loc 1 232 6 is_stmt 0 view .LVU10
   54 0020 1968     		ldr	r1, [r3]
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 6
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 6
 
 
   55              		.loc 1 232 11 view .LVU11
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  253:Core/Src/system_stm32wbxx.c **** }
   89              		.loc 1 253 1 view .LVU27
   90 0058 7047     		bx	lr
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 7
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 7
 
 
   91              	.L3:
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  293:Core/Src/system_stm32wbxx.c ****   *
  294:Core/Src/system_stm32wbxx.c ****   * @param  None
  295:Core/Src/system_stm32wbxx.c ****   * @retval None
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 8
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 8
 
 
  296:Core/Src/system_stm32wbxx.c ****   */
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  309:Core/Src/system_stm32wbxx.c ****     case 0x00: /* MSI used as system clock source */
  310:Core/Src/system_stm32wbxx.c ****       SystemCoreClock = msirange;
  149              		.loc 1 310 7 is_stmt 1 view .LVU38
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 9
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 9
 
 
  150              		.loc 1 310 23 is_stmt 0 view .LVU39
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  328:Core/Src/system_stm32wbxx.c **** 
  329:Core/Src/system_stm32wbxx.c ****       if (pllsource == 0x02UL) /* HSI used as PLL clock source */
  187              		.loc 1 329 7 is_stmt 1 view .LVU54
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 10
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 10
 
 
  188              		.loc 1 329 10 is_stmt 0 view .LVU55
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  226              		.loc 1 345 23 view .LVU72
  227 007a 1360     		str	r3, [r2]
  346:Core/Src/system_stm32wbxx.c ****       break;
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 11
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 11
 
 
  228              		.loc 1 346 7 is_stmt 1 view .LVU73
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  265              		.loc 1 355 52 view .LVU87
  266 0098 C3F30313 		ubfx	r3, r3, #4, #4
  267              		.loc 1 355 7 view .LVU88
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 12
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 12
 
 
  268 009c 084A     		ldr	r2, .L17+16
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  321              		.global	MSIRangeTable
  322              		.section	.rodata.MSIRangeTable,"a"
  323              		.align	2
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 13
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 13
 
 
  326              	MSIRangeTable:
@@ -778,36 +778,36 @@ ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 1
  386              		.text
  387              	.Letext0:
  388              		.file 2 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 14
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 14
 
 
  389              		.file 3 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
  390              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  391              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  392              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
-ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s 			page 15
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:21     .text.SystemInit:00000000 $t
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:27     .text.SystemInit:00000000 SystemInit
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:94     .text.SystemInit:0000005c $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:100    .text.SystemCoreClockUpdate:00000000 $t
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:134    .text.SystemCoreClockUpdate:0000001e $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:283    .text.SystemCoreClockUpdate:000000b0 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:326    .rodata.MSIRangeTable:00000000 MSIRangeTable
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:384    .data.SystemCoreClock:00000000 SystemCoreClock
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:362    .rodata.AHBPrescTable:00000000 AHBPrescTable
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:296    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:293    .rodata.SmpsPrescalerTable:00000000 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:323    .rodata.MSIRangeTable:00000000 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:348    .rodata.APBPrescTable:00000000 APBPrescTable
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:345    .rodata.APBPrescTable:00000000 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:359    .rodata.AHBPrescTable:00000000 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:381    .data.SystemCoreClock:00000000 $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:147    .text.SystemCoreClockUpdate:0000002b $d
-/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccw5tea6.s:147    .text.SystemCoreClockUpdate:0000002c $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:21     .text.SystemInit:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:27     .text.SystemInit:00000000 SystemInit
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:94     .text.SystemInit:0000005c $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:100    .text.SystemCoreClockUpdate:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:134    .text.SystemCoreClockUpdate:0000001e $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:283    .text.SystemCoreClockUpdate:000000b0 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:326    .rodata.MSIRangeTable:00000000 MSIRangeTable
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:384    .data.SystemCoreClock:00000000 SystemCoreClock
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:362    .rodata.AHBPrescTable:00000000 AHBPrescTable
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:296    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:293    .rodata.SmpsPrescalerTable:00000000 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:323    .rodata.MSIRangeTable:00000000 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:348    .rodata.APBPrescTable:00000000 APBPrescTable
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:345    .rodata.APBPrescTable:00000000 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:359    .rodata.AHBPrescTable:00000000 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:381    .data.SystemCoreClock:00000000 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:147    .text.SystemCoreClockUpdate:0000002b $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cc1edoXb.s:147    .text.SystemCoreClockUpdate:0000002c $t
 
 NO UNDEFINED SYMBOLS
