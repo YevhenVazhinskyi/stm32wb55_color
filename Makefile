@@ -76,8 +76,11 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Drivers/MyDriver/clock/system_clock_config.c \
-Drivers/MyDriver/i2c/i2c_init.c
-
+Drivers/MyDriver/i2c/i2c_init.c \
+Drivers/MyDriver/rf/rf_init.c \
+Drivers/MyDriver/spi/spi_init.c \
+Drivers/MyDriver/tim/tim_init.c \
+Drivers/MyDriver/gpio/gpio__init.c 
 
 # ASM sources
 ASM_SOURCES =  \
@@ -157,7 +160,10 @@ C_INCLUDES =  \
 -IDrivers/MyDriver/clock \
 -IDrivers/MyDriver/gpio \
 -IDrivers/MyDriver/i2c \
--IDrivers/MyDriver/timer
+-IDrivers/MyDriver/tim \
+-IDrivers/MyDriver/rf \
+-IDrivers/MyDriver/spi 
+
 
 
 

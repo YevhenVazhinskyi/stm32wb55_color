@@ -5,11 +5,12 @@
 extern "C" {
 #endif
 
-
-#include "stm32wbxx_hal.h"
+#include "main.h"
+//#include "stm32wbxx_hal.h"
 
 
 void SystemClock_Config(void);
+void PeriphCommonClock_Config(void);
 
 
 

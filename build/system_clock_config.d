@@ -1,5 +1,5 @@
 build/system_clock_config.o: Drivers/MyDriver/clock/system_clock_config.c \
- Drivers/MyDriver/clock/system_clock_config.h \
+ Drivers/MyDriver/clock/system_clock_config.h Core/Inc/main.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
  Core/Inc/stm32wbxx_hal_conf.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h \
@@ -39,9 +39,9 @@ build/system_clock_config.o: Drivers/MyDriver/clock/system_clock_config.c \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim_ex.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h \
- Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h Core/Inc/main.h \
- Drivers/MyDriver/clock/system_clock_config.h
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h
 Drivers/MyDriver/clock/system_clock_config.h:
+Core/Inc/main.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 Core/Inc/stm32wbxx_hal_conf.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h:
@@ -84,5 +84,3 @@ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
-Core/Inc/main.h:
-Drivers/MyDriver/clock/system_clock_config.h:

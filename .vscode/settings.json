@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "random": "c"
+        "random": "c",
+        "ios": "c",
+        "i2c_init.h": "c",
+        "main.h": "c",
+        "stm32wbxx_hal.h": "c",
+        "gpio_init.h": "c",
+        "cstdint": "c"
     }
 }
