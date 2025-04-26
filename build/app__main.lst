@@ -1,0 +1,100 @@
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"app__main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "App/app__main.c"
+  20              		.section	.text.BlinkTask,"ax",%progbits
+  21              		.align	1
+  22              		.global	BlinkTask
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	BlinkTask:
+  28              	.LFB954:
+   1:App/app__main.c **** #include "app__main.h"
+   2:App/app__main.c **** 
+   3:App/app__main.c **** #include "FreeRTOS.h"
+   4:App/app__main.c **** #include "task.h"         // <--- вот это обязательно для vTaskDelay
+   5:App/app__main.c **** 
+   6:App/app__main.c **** void BlinkTask(void *pvParameters)
+   7:App/app__main.c **** {
+  29              		.loc 1 7 1 view -0
+  30              		.cfi_startproc
+  31              		@ Volatile: function does not return.
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              	.LVL0:
+  35              		.loc 1 7 1 is_stmt 0 view .LVU1
+  36 0000 08B5     		push	{r3, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+  41              	.LVL1:
+  42              	.L2:
+   8:App/app__main.c ****   (void) pvParameters;  // unused
+  43              		.loc 1 8 3 is_stmt 1 view .LVU2
+   9:App/app__main.c **** 
+  10:App/app__main.c ****   while (1)
+  44              		.loc 1 10 3 view .LVU3
+  11:App/app__main.c ****   {
+  12:App/app__main.c ****     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
+  45              		.loc 1 12 5 view .LVU4
+  46 0002 2021     		movs	r1, #32
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s 			page 2
+
+
+  47 0004 0348     		ldr	r0, .L4
+  48 0006 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+  49              	.LVL2:
+  13:App/app__main.c ****     vTaskDelay(pdMS_TO_TICKS(50)); // задержка 500 мс
+  50              		.loc 1 13 5 discriminator 1 view .LVU5
+  51 000a 3220     		movs	r0, #50
+  52 000c FFF7FEFF 		bl	vTaskDelay
+  53              	.LVL3:
+  10:App/app__main.c ****   {
+  54              		.loc 1 10 9 view .LVU6
+  55 0010 F7E7     		b	.L2
+  56              	.L5:
+  57 0012 00BF     		.align	2
+  58              	.L4:
+  59 0014 00040048 		.word	1207960576
+  60              		.cfi_endproc
+  61              	.LFE954:
+  63              		.text
+  64              	.Letext0:
+  65              		.file 2 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+  66              		.file 3 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+  67              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+  68              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+  69              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+  70              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app__main.c
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s:21     .text.BlinkTask:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s:27     .text.BlinkTask:00000000 BlinkTask
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccp8YLaQ.s:59     .text.BlinkTask:00000014 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_TogglePin
+vTaskDelay

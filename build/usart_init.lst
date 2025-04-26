@@ -1,0 +1,230 @@
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usart_init.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/MyDriver/usart/usart_init.c"
+  20              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	MX_USART1_UART_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_USART1_UART_Init:
+  28              	.LFB950:
+   1:Drivers/MyDriver/usart/usart_init.c **** #include "usart_init.h"
+   2:Drivers/MyDriver/usart/usart_init.c **** 
+   3:Drivers/MyDriver/usart/usart_init.c **** 
+   4:Drivers/MyDriver/usart/usart_init.c **** UART_HandleTypeDef huart1;
+   5:Drivers/MyDriver/usart/usart_init.c **** 
+   6:Drivers/MyDriver/usart/usart_init.c **** 
+   7:Drivers/MyDriver/usart/usart_init.c **** void MX_USART1_UART_Init(void)
+   8:Drivers/MyDriver/usart/usart_init.c **** {
+  29              		.loc 1 8 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+   9:Drivers/MyDriver/usart/usart_init.c **** 
+  10:Drivers/MyDriver/usart/usart_init.c ****   
+  11:Drivers/MyDriver/usart/usart_init.c ****   huart1.Instance = USART1;
+  38              		.loc 1 11 3 view .LVU1
+  39              		.loc 1 11 19 is_stmt 0 view .LVU2
+  40 0002 1748     		ldr	r0, .L11
+  41 0004 174B     		ldr	r3, .L11+4
+  42 0006 0360     		str	r3, [r0]
+  12:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.BaudRate = 115200;
+  43              		.loc 1 12 3 is_stmt 1 view .LVU3
+  44              		.loc 1 12 24 is_stmt 0 view .LVU4
+  45 0008 4FF4E133 		mov	r3, #115200
+  46 000c 4360     		str	r3, [r0, #4]
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s 			page 2
+
+
+  13:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  47              		.loc 1 13 3 is_stmt 1 view .LVU5
+  48              		.loc 1 13 26 is_stmt 0 view .LVU6
+  49 000e 0023     		movs	r3, #0
+  50 0010 8360     		str	r3, [r0, #8]
+  14:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
+  51              		.loc 1 14 3 is_stmt 1 view .LVU7
+  52              		.loc 1 14 24 is_stmt 0 view .LVU8
+  53 0012 C360     		str	r3, [r0, #12]
+  15:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.Parity = UART_PARITY_NONE;
+  54              		.loc 1 15 3 is_stmt 1 view .LVU9
+  55              		.loc 1 15 22 is_stmt 0 view .LVU10
+  56 0014 0361     		str	r3, [r0, #16]
+  16:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
+  57              		.loc 1 16 3 is_stmt 1 view .LVU11
+  58              		.loc 1 16 20 is_stmt 0 view .LVU12
+  59 0016 0C22     		movs	r2, #12
+  60 0018 4261     		str	r2, [r0, #20]
+  17:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  61              		.loc 1 17 3 is_stmt 1 view .LVU13
+  62              		.loc 1 17 25 is_stmt 0 view .LVU14
+  63 001a 8361     		str	r3, [r0, #24]
+  18:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  64              		.loc 1 18 3 is_stmt 1 view .LVU15
+  65              		.loc 1 18 28 is_stmt 0 view .LVU16
+  66 001c C361     		str	r3, [r0, #28]
+  19:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  67              		.loc 1 19 3 is_stmt 1 view .LVU17
+  68              		.loc 1 19 30 is_stmt 0 view .LVU18
+  69 001e 0362     		str	r3, [r0, #32]
+  20:Drivers/MyDriver/usart/usart_init.c ****   huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+  70              		.loc 1 20 3 is_stmt 1 view .LVU19
+  71              		.loc 1 20 30 is_stmt 0 view .LVU20
+  72 0020 4362     		str	r3, [r0, #36]
+  21:Drivers/MyDriver/usart/usart_init.c ****   huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  73              		.loc 1 21 3 is_stmt 1 view .LVU21
+  74              		.loc 1 21 38 is_stmt 0 view .LVU22
+  75 0022 8362     		str	r3, [r0, #40]
+  22:Drivers/MyDriver/usart/usart_init.c ****   if (HAL_UART_Init(&huart1) != HAL_OK)
+  76              		.loc 1 22 3 is_stmt 1 view .LVU23
+  77              		.loc 1 22 7 is_stmt 0 view .LVU24
+  78 0024 FFF7FEFF 		bl	HAL_UART_Init
+  79              	.LVL0:
+  80              		.loc 1 22 6 discriminator 1 view .LVU25
+  81 0028 70B9     		cbnz	r0, .L7
+  82              	.L2:
+  23:Drivers/MyDriver/usart/usart_init.c ****   {
+  24:Drivers/MyDriver/usart/usart_init.c ****     Error_Handler();
+  25:Drivers/MyDriver/usart/usart_init.c ****   }
+  26:Drivers/MyDriver/usart/usart_init.c ****   if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+  83              		.loc 1 26 3 is_stmt 1 view .LVU26
+  84              		.loc 1 26 7 is_stmt 0 view .LVU27
+  85 002a 0021     		movs	r1, #0
+  86 002c 0C48     		ldr	r0, .L11
+  87 002e FFF7FEFF 		bl	HAL_UARTEx_SetTxFifoThreshold
+  88              	.LVL1:
+  89              		.loc 1 26 6 discriminator 1 view .LVU28
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s 			page 3
+
+
+  90 0032 60B9     		cbnz	r0, .L8
+  91              	.L3:
+  27:Drivers/MyDriver/usart/usart_init.c ****   {
+  28:Drivers/MyDriver/usart/usart_init.c ****     Error_Handler();
+  29:Drivers/MyDriver/usart/usart_init.c ****   }
+  30:Drivers/MyDriver/usart/usart_init.c ****   if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
+  92              		.loc 1 30 3 is_stmt 1 view .LVU29
+  93              		.loc 1 30 7 is_stmt 0 view .LVU30
+  94 0034 0021     		movs	r1, #0
+  95 0036 0A48     		ldr	r0, .L11
+  96 0038 FFF7FEFF 		bl	HAL_UARTEx_SetRxFifoThreshold
+  97              	.LVL2:
+  98              		.loc 1 30 6 discriminator 1 view .LVU31
+  99 003c 50B9     		cbnz	r0, .L9
+ 100              	.L4:
+  31:Drivers/MyDriver/usart/usart_init.c ****   {
+  32:Drivers/MyDriver/usart/usart_init.c ****     Error_Handler();
+  33:Drivers/MyDriver/usart/usart_init.c ****   }
+  34:Drivers/MyDriver/usart/usart_init.c ****   if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
+ 101              		.loc 1 34 3 is_stmt 1 view .LVU32
+ 102              		.loc 1 34 7 is_stmt 0 view .LVU33
+ 103 003e 0848     		ldr	r0, .L11
+ 104 0040 FFF7FEFF 		bl	HAL_UARTEx_DisableFifoMode
+ 105              	.LVL3:
+ 106              		.loc 1 34 6 discriminator 1 view .LVU34
+ 107 0044 48B9     		cbnz	r0, .L10
+ 108              	.L1:
+  35:Drivers/MyDriver/usart/usart_init.c ****   {
+  36:Drivers/MyDriver/usart/usart_init.c ****     Error_Handler();
+  37:Drivers/MyDriver/usart/usart_init.c ****   }
+  38:Drivers/MyDriver/usart/usart_init.c **** 
+  39:Drivers/MyDriver/usart/usart_init.c **** 
+  40:Drivers/MyDriver/usart/usart_init.c **** }
+ 109              		.loc 1 40 1 view .LVU35
+ 110 0046 08BD     		pop	{r3, pc}
+ 111              	.L7:
+  24:Drivers/MyDriver/usart/usart_init.c ****   }
+ 112              		.loc 1 24 5 is_stmt 1 view .LVU36
+ 113 0048 FFF7FEFF 		bl	Error_Handler
+ 114              	.LVL4:
+ 115 004c EDE7     		b	.L2
+ 116              	.L8:
+  28:Drivers/MyDriver/usart/usart_init.c ****   }
+ 117              		.loc 1 28 5 view .LVU37
+ 118 004e FFF7FEFF 		bl	Error_Handler
+ 119              	.LVL5:
+ 120 0052 EFE7     		b	.L3
+ 121              	.L9:
+  32:Drivers/MyDriver/usart/usart_init.c ****   }
+ 122              		.loc 1 32 5 view .LVU38
+ 123 0054 FFF7FEFF 		bl	Error_Handler
+ 124              	.LVL6:
+ 125 0058 F1E7     		b	.L4
+ 126              	.L10:
+  36:Drivers/MyDriver/usart/usart_init.c ****   }
+ 127              		.loc 1 36 5 view .LVU39
+ 128 005a FFF7FEFF 		bl	Error_Handler
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s 			page 4
+
+
+ 129              	.LVL7:
+ 130              		.loc 1 40 1 is_stmt 0 view .LVU40
+ 131 005e F2E7     		b	.L1
+ 132              	.L12:
+ 133              		.align	2
+ 134              	.L11:
+ 135 0060 00000000 		.word	huart1
+ 136 0064 00380140 		.word	1073821696
+ 137              		.cfi_endproc
+ 138              	.LFE950:
+ 140              		.global	huart1
+ 141              		.section	.bss.huart1,"aw",%nobits
+ 142              		.align	2
+ 145              	huart1:
+ 146 0000 00000000 		.space	148
+ 146      00000000 
+ 146      00000000 
+ 146      00000000 
+ 146      00000000 
+ 147              		.text
+ 148              	.Letext0:
+ 149              		.file 2 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+ 150              		.file 3 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+ 151              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 152              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 153              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 154              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
+ 155              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart_ex.h"
+ 156              		.file 9 "Drivers/MyDriver/usart/usart_init.h"
+ 157              		.file 10 "Core/Inc/main.h"
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usart_init.c
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s:21     .text.MX_USART1_UART_Init:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s:27     .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s:135    .text.MX_USART1_UART_Init:00000060 $d
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s:145    .bss.huart1:00000000 huart1
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//cccWyCF9.s:142    .bss.huart1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_UART_Init
+HAL_UARTEx_SetTxFifoThreshold
+HAL_UARTEx_SetRxFifoThreshold
+HAL_UARTEx_DisableFifoMode
+Error_Handler

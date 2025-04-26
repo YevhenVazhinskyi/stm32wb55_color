@@ -53,7 +53,10 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/MyDriver/i2c/i2c_init.h Drivers/MyDriver/spi/spi_init.h \
  Drivers/MyDriver/rf/rf_init.h Drivers/MyDriver/gpio/gpio__init.h \
  Drivers/MyDriver/clock/system_clock_config.h \
- Drivers/MyDriver/tim/tim_init.h
+ Drivers/MyDriver/system/error_handler.h \
+ Drivers/MyDriver/system/tick_callback.h Drivers/MyDriver/tim/tim_init.h \
+ Drivers/MyDriver/usart/usart_init.h Core/Inc/my_tasks.h Core/Inc/main.h \
+ App/app__main.h
 Core/Inc/main.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 Core/Inc/stm32wbxx_hal_conf.h:
@@ -113,4 +116,10 @@ Drivers/MyDriver/spi/spi_init.h:
 Drivers/MyDriver/rf/rf_init.h:
 Drivers/MyDriver/gpio/gpio__init.h:
 Drivers/MyDriver/clock/system_clock_config.h:
+Drivers/MyDriver/system/error_handler.h:
+Drivers/MyDriver/system/tick_callback.h:
 Drivers/MyDriver/tim/tim_init.h:
+Drivers/MyDriver/usart/usart_init.h:
+Core/Inc/my_tasks.h:
+Core/Inc/main.h:
+App/app__main.h:

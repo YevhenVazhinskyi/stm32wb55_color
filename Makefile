@@ -37,6 +37,7 @@ BUILD_DIR = build
 # C sources
 C_SOURCES =  \
 Core/Src/main.c \
+Core/Src/my_tasks.c \
 Core/Src/app_freertos.c \
 Core/Src/stm32wbxx_it.c \
 Core/Src/stm32wbxx_hal_msp.c \
@@ -80,7 +81,20 @@ Drivers/MyDriver/i2c/i2c_init.c \
 Drivers/MyDriver/rf/rf_init.c \
 Drivers/MyDriver/spi/spi_init.c \
 Drivers/MyDriver/tim/tim_init.c \
-Drivers/MyDriver/gpio/gpio__init.c 
+Drivers/MyDriver/gpio/gpio__init.c \
+Drivers/MyDriver/system/error_handler.c \
+Drivers/MyDriver/system/tick_callback.c \
+Drivers/MyDriver/usart/usart_init.c \
+Services/motor__control.c \
+Services/sensor__manager.c \
+Services/ble__service.c \
+Services/mixing__algorithm.c \
+Services/power__manager.c \
+Services/error__manager.c \
+Services/logger__service.c \
+App/app__main.c
+
+
 
 # ASM sources
 ASM_SOURCES =  \
@@ -162,7 +176,13 @@ C_INCLUDES =  \
 -IDrivers/MyDriver/i2c \
 -IDrivers/MyDriver/tim \
 -IDrivers/MyDriver/rf \
--IDrivers/MyDriver/spi 
+-IDrivers/MyDriver/spi \
+-IDrivers/MyDriver/system \
+-IDrivers/MyDriver/usart \
+-IServices \
+-IUtils \
+-ITests \
+-IApp
 
 
 

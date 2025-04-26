@@ -1,0 +1,107 @@
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"tick_callback.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/MyDriver/system/tick_callback.c"
+  20              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+  21              		.align	1
+  22              		.global	HAL_TIM_PeriodElapsedCallback
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	HAL_TIM_PeriodElapsedCallback:
+  28              	.LVL0:
+  29              	.LFB950:
+   1:Drivers/MyDriver/system/tick_callback.c **** #include "tick_callback.h"
+   2:Drivers/MyDriver/system/tick_callback.c **** /**
+   3:Drivers/MyDriver/system/tick_callback.c ****   * @brief  Period elapsed callback in non blocking mode
+   4:Drivers/MyDriver/system/tick_callback.c ****   * @note   This function is called  when TIM16 interrupt took place, inside
+   5:Drivers/MyDriver/system/tick_callback.c ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+   6:Drivers/MyDriver/system/tick_callback.c ****   * a global variable "uwTick" used as application time base.
+   7:Drivers/MyDriver/system/tick_callback.c ****   * @param  htim : TIM handle
+   8:Drivers/MyDriver/system/tick_callback.c ****   * @retval None
+   9:Drivers/MyDriver/system/tick_callback.c ****   */
+  10:Drivers/MyDriver/system/tick_callback.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+  11:Drivers/MyDriver/system/tick_callback.c **** {
+  30              		.loc 1 11 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 11 1 is_stmt 0 view .LVU1
+  35 0000 08B5     		push	{r3, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 3, -8
+  39              		.cfi_offset 14, -4
+  12:Drivers/MyDriver/system/tick_callback.c ****   
+  13:Drivers/MyDriver/system/tick_callback.c ****   if (htim->Instance == TIM16)
+  40              		.loc 1 13 3 is_stmt 1 view .LVU2
+  41              		.loc 1 13 11 is_stmt 0 view .LVU3
+  42 0002 0268     		ldr	r2, [r0]
+  43              		.loc 1 13 6 view .LVU4
+  44 0004 034B     		ldr	r3, .L5
+  45 0006 9A42     		cmp	r2, r3
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s 			page 2
+
+
+  46 0008 00D0     		beq	.L4
+  47              	.LVL1:
+  48              	.L1:
+  14:Drivers/MyDriver/system/tick_callback.c ****   {
+  15:Drivers/MyDriver/system/tick_callback.c ****     HAL_IncTick();
+  16:Drivers/MyDriver/system/tick_callback.c ****   }
+  17:Drivers/MyDriver/system/tick_callback.c ****   
+  18:Drivers/MyDriver/system/tick_callback.c **** }...
+  49              		.loc 1 18 1 view .LVU5
+  50 000a 08BD     		pop	{r3, pc}
+  51              	.LVL2:
+  52              	.L4:
+  15:Drivers/MyDriver/system/tick_callback.c ****     HAL_IncTick();
+  53              		.loc 1 15 5 is_stmt 1 view .LVU6
+  54 000c FFF7FEFF 		bl	HAL_IncTick
+  55              	.LVL3:
+  56              		.loc 1 18 1 is_stmt 0 view .LVU7
+  57 0010 FBE7     		b	.L1
+  58              	.L6:
+  59 0012 00BF     		.align	2
+  60              	.L5:
+  61 0014 00440140 		.word	1073824768
+  62              		.cfi_endproc
+  63              	.LFE950:
+  65              		.text
+  66              	.Letext0:
+  67              		.file 2 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+  68              		.file 3 "/Users/yevhenvazhynskyi/Drivers/arm-gnu-toolchain-14.2.rel1-darwin-arm64-arm-none-eabi/ar
+  69              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+  70              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+  71              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+  72              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
+  73              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ARM GAS  /var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tick_callback.c
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s:21     .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s:27     .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+/var/folders/98/ctz5mtps7w71v8dr53cf5qg40000gn/T//ccoVa1RX.s:61     .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+
+UNDEFINED SYMBOLS
+HAL_IncTick
