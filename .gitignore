@@ -1,0 +1,23 @@
+# Ignore build artifacts
+/build/
+
+# Ignore backup and temporary files
+*.bak
+*.tmp
+*.swp
+*~
+
+# Ignore object files and list files
+*.o
+*.d
+*.lst
+*.map
+*.elf
+*.bin
+*.hex
+
+# Ignore VS Code settings (optional if you use VS Code)
+.vscode/
+
+# Ignore CubeMX generated backup
+*.ioc-backup
