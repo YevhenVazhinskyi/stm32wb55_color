@@ -1,0 +1,242 @@
+# Cursor Rules for BLE LED Control Device
+
+## Project Overview
+This is a BLE LED control device project using STM32WB55 microcontroller and Flutter mobile application.
+
+## Code Style and Standards
+
+### C/C++ (STM32)
+- Use snake_case for functions and variables
+- Use UPPER_SNAKE_CASE for constants and macros
+- Use PascalCase for structs and enums
+- File naming: module__function.c (e.g., ble__service.c)
+- Maximum 500 lines per file
+- Maximum 50 lines per function
+- Always include header guards in .h files
+- Use meaningful variable names
+- Add comments for complex logic
+
+### Dart/Flutter
+- Use camelCase for variables and functions
+- Use PascalCase for classes and enums
+- Use snake_case for file names
+- Follow Flutter style guide
+- Use const constructors where possible
+- Prefer composition over inheritance
+
+### Documentation
+- All public functions must have documentation
+- Use Doxygen-style comments for C/C++
+- Use Dart documentation comments for Flutter
+- Update docs/Project.md when architecture changes
+- Update docs/Tasktracker.md when tasks are completed
+- Add entries to docs/Diary.md for technical decisions
+
+## Project Structure
+
+### STM32 (Embedded)
+```
+App/           # Application layer
+Core/          # System files (main, tasks, FreeRTOS)
+Drivers/       # Hardware drivers (HAL, custom)
+Services/      # High-level services (BLE, LED control)
+Utils/         # Utility functions
+Test/          # Test files
+docs/          # Project documentation
+```
+
+### Flutter (Mobile)
+```
+lib/
+├── main.dart
+├── models/     # Data models
+├── services/   # BLE service, business logic
+├── widgets/    # UI components
+├── screens/    # App screens
+└── utils/      # Utility functions
+```
+
+## Development Workflow
+
+### Before Starting Work
+1. Check docs/Tasktracker.md for current tasks
+2. Read docs/Diary.md for recent decisions
+3. Review docs/qa.md for unanswered questions
+4. Update task status when starting work
+
+### During Development
+1. Follow the established code style
+2. Add appropriate error handling
+3. Test functionality thoroughly
+4. Update documentation as needed
+5. Add entries to docs/Diary.md for important decisions
+
+### After Completing Work
+1. Update docs/Tasktracker.md with progress
+2. Add entry to docs/Diary.md if needed
+3. Update docs/Project.md if architecture changed
+4. Test the complete system
+5. Commit with descriptive messages
+
+## BLE Protocol Standards
+
+### Service UUID
+- LED Control Service: `12345678-1234-1234-1234-123456789ABC`
+
+### Characteristics
+- LED State: `87654321-4321-4321-4321-CBA987654321`
+- LED Individual: `11111111-2222-3333-4444-555555555555`
+- System Status: `AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE`
+
+### Data Formats
+- LED State: 1 byte (bit mask for 4 LEDs)
+- LED Individual: 2 bytes (ID + state)
+- System Status: 4 bytes (status, errors, temperature)
+
+## Testing Requirements
+
+### STM32 Testing
+- Unit tests for all services
+- Integration tests for BLE functionality
+- Hardware tests for LED control
+- Performance tests for response time
+
+### Flutter Testing
+- Unit tests for business logic
+- Widget tests for UI components
+- Integration tests for BLE communication
+- E2E tests for complete workflow
+
+## Security Guidelines
+
+### BLE Security
+- Use Just Works security for MVP
+- Implement MAC address filtering
+- Validate all incoming commands
+- Log security events
+
+### Code Security
+- Validate all input parameters
+- Check buffer boundaries
+- Use secure random number generation
+- Implement proper error handling
+
+## Performance Requirements
+
+### Response Time
+- BLE command to LED change: < 100ms
+- BLE scanning: < 5 seconds
+- Reconnection: < 3 seconds
+
+### Power Consumption
+- Standby mode: < 1mA
+- Active mode: < 10mA
+- BLE transmission: < 20mA
+
+## Error Handling
+
+### STM32 Error Handling
+- Use error codes for all functions
+- Implement error logging system
+- Add watchdog timer
+- Graceful degradation on errors
+
+### Flutter Error Handling
+- Use try-catch blocks appropriately
+- Show user-friendly error messages
+- Log errors for debugging
+- Implement retry mechanisms
+
+## Version Control
+
+### Commit Messages
+- Use conventional commit format
+- Include task number if applicable
+- Describe what and why, not how
+- Keep commits atomic and focused
+
+### Branch Strategy
+- main: production-ready code
+- develop: integration branch
+- feature/*: new features
+- bugfix/*: bug fixes
+- release/*: release preparation
+
+## Documentation Updates
+
+### When to Update Project.md
+- Architecture changes
+- New requirements
+- Technology stack changes
+- Performance requirements updates
+
+### When to Update Tasktracker.md
+- Task completion
+- New tasks added
+- Priority changes
+- Timeline adjustments
+
+### When to Update Diary.md
+- Technical decisions made
+- Problems encountered and solved
+- Important observations
+- Next steps planned
+
+## Code Review Checklist
+
+### STM32 Code Review
+- [ ] Follows naming conventions
+- [ ] Proper error handling
+- [ ] Memory management
+- [ ] BLE protocol compliance
+- [ ] Performance considerations
+- [ ] Documentation updated
+
+### Flutter Code Review
+- [ ] Follows Flutter style guide
+- [ ] Proper state management
+- [ ] BLE communication working
+- [ ] UI/UX considerations
+- [ ] Error handling
+- [ ] Testing coverage
+
+## Emergency Procedures
+
+### Build Failures
+1. Check Makefile for syntax errors
+2. Verify all source files exist
+3. Check include paths
+4. Review recent changes
+
+### BLE Issues
+1. Check device compatibility
+2. Verify UUIDs match
+3. Test with BLE scanner
+4. Review protocol implementation
+
+### Flutter Issues
+1. Check BLE permissions
+2. Verify device compatibility
+3. Test on both platforms
+4. Review BLE library version
+
+## Contact Information
+
+### Team Roles
+- System Architect: [Name]
+- Embedded Developer: [Name]
+- Mobile Developer: [Name]
+- Tester: [Name]
+
+### Communication
+- Email: [email]
+- Slack: [channel]
+- GitHub: [repository]
+
+---
+
+**Version**: 1.0  
+**Created**: 2024-12-19  
+**Last Updated**: 2024-12-19
+
+
