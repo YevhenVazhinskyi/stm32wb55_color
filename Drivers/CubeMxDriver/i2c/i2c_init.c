@@ -6,7 +6,7 @@
 I2C_HandleTypeDef hi2c1; 
 
 
-void MX_I2C1_Init(void)
+void i2c_init(void)
 {
     hi2c1.Instance = I2C1;
     hi2c1.Init.Timing = 0x00B07CB4;

@@ -1,3 +1,4 @@
+/*
 #ifndef __SPI_INIT_H
 #define __SPI_INIT_H
 #ifdef __cplusplus

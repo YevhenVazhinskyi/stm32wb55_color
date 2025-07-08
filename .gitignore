@@ -1,23 +1,142 @@
-# Ignore build artifacts
-/build/
-
-# Ignore backup and temporary files
-*.bak
-*.tmp
-*.swp
-*~
-
-# Ignore object files and list files
-*.o
-*.d
-*.lst
-*.map
+# STM32 Build Artifacts
+build/
+Debug/
+Release/
 *.elf
 *.bin
 *.hex
+*.map
+*.lst
+*.o
+*.d
+*.su
+*.cyclo
 
-# Ignore VS Code settings (optional if you use VS Code)
+# STM32CubeIDE / Eclipse
+.metadata
+.project
+.cproject
+.settings/
+*.launch
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# STM32CubeMX
+*.ioc.bak
+*.ioc~
+*.ioc.orig
+
+# J-Link
+*.jlink
+JLinkLog.txt
+JLinkSettings.ini
+
+# VS Code
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Ignore CubeMX generated backup
-*.ioc-backup
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Linux
+*~
+.nfs*
+
+# Backup files
+*.backup
+*.orig
+*.rej
+
+# Flutter/Dart
+# These are also under version control, so override some defaults
+!lib/generated_plugin_registrant.dart
+!**/ios/Flutter/App.framework
+!**/ios/Flutter/Flutter.framework
+!**/ios/Flutter/Generated.xcconfig
+!**/ios/Flutter/app.flx
+!**/ios/Flutter/app.zip
+!**/ios/Flutter/flutter_assets/
+
+# Dart/Flutter files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.g.dart
+*.freezed.dart
+*.gr.dart
+
+# Web related
+web/
+coverage/
+
+# Mobile releases
+*.apk
+*.aab
+*.ipa
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Optional: Ignore large libraries if they can be downloaded
+# STM32CubeWB/ (uncomment if you want to ignore the large STM32CubeWB directory)
+
+# Keep important project files but ignore build artifacts
+!*.c
+!*.h
+!*.cpp
+!*.hpp
+!*.s
+!*.S
+!*.ld
+!Makefile
+!*.mk
+!*.md
+!*.txt
+!*.json
+!*.xml
+!*.ioc
+!*.dart
+!*.yaml
+!*.yml

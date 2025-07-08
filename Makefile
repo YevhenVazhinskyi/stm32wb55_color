@@ -61,8 +61,6 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_exti.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_ipcc.c \
-Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi.c \
-Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c \
 Core/Src/system_stm32wbxx.c \
@@ -76,23 +74,41 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.c \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
-Drivers/MyDriver/clock/system_clock_config.c \
-Drivers/MyDriver/i2c/i2c_init.c \
-Drivers/MyDriver/rf/rf_init.c \
-Drivers/MyDriver/spi/spi_init.c \
-Drivers/MyDriver/tim/tim_init.c \
-Drivers/MyDriver/gpio/gpio__init.c \
-Drivers/MyDriver/system/error_handler.c \
-Drivers/MyDriver/system/tick_callback.c \
-Drivers/MyDriver/usart/usart_init.c \
+Drivers/CubeMxDriver/clock/system_clock_config.c \
+Drivers/CubeMxDriver/i2c/i2c_init.c \
+Drivers/CubeMxDriver/rf/rf_init.c \
+Drivers/CubeMxDriver/spi/spi_init.c \
+Drivers/CubeMxDriver/tim/tim_init.c \
+Drivers/CubeMxDriver/gpio/gpio__init.c \
+Drivers/CubeMxDriver/system/error_handler.c \
+Drivers/CubeMxDriver/system/tick_callback.c \
+Drivers/CubeMxDriver/usart/usart_init.c \
+Drivers/MyDriver/stepper__driver.c \
+Drivers/MyDriver/drv8833__driver.c \
+Drivers/MyDriver/led__driver.c \
 Services/motor__control.c \
 Services/sensor__manager.c \
 Services/ble__service.c \
+Services/led__controller.c \
 Services/mixing__algorithm.c \
 Services/power__manager.c \
 Services/error__manager.c \
 Services/logger__service.c \
-App/app__main.c
+App/app__main.c \
+App/blink__logic.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/shci_tl.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/shci_tl_if.c \
+Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci/shci.c \
+Middlewares/ST/STM32_WPAN/utilities/stm_list.c \
+Middlewares/ST/STM32_WPAN/utilities/stm_queue.c \
+Middlewares/ST/STM32_WPAN/utilities/stm32_mm.c \
+Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c \
+Core/Src/hw_ipcc.c \
+Core/Src/ble_user_callbacks.c \
+Core/Src/ble_aci_stubs.c
 
 
 
@@ -146,7 +162,8 @@ AS_DEFS =
 # C defines
 C_DEFS =  \
 -DUSE_HAL_DRIVER \
--DSTM32WB55xx
+-DSTM32WB55xx \
+-DSTM32_WPAN_ENABLED
 
 
 # AS includes
@@ -170,19 +187,29 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 -IDrivers/CMSIS/Device/ST/STM32WBxx/Include \
 -IDrivers/CMSIS/Include \
+-IDrivers/CubeMxDriver \
+-IDrivers/CubeMxDriver/clock \
+-IDrivers/CubeMxDriver/gpio \
+-IDrivers/CubeMxDriver/i2c \
+-IDrivers/CubeMxDriver/tim \
+-IDrivers/CubeMxDriver/rf \
+-IDrivers/CubeMxDriver/spi \
+-IDrivers/CubeMxDriver/system \
+-IDrivers/CubeMxDriver/usart \
 -IDrivers/MyDriver \
--IDrivers/MyDriver/clock \
--IDrivers/MyDriver/gpio \
--IDrivers/MyDriver/i2c \
--IDrivers/MyDriver/tim \
--IDrivers/MyDriver/rf \
--IDrivers/MyDriver/spi \
--IDrivers/MyDriver/system \
--IDrivers/MyDriver/usart \
 -IServices \
 -IUtils \
 -ITests \
--IApp
+-IApp \
+-IMiddlewares/ST/STM32_WPAN/ble \
+-IMiddlewares/ST/STM32_WPAN/ble/core \
+-IMiddlewares/ST/STM32_WPAN/ble/core/auto \
+-IMiddlewares/ST/STM32_WPAN/ble/core/template \
+-IMiddlewares/ST/STM32_WPAN/ble/svc/Inc \
+-IMiddlewares/ST/STM32_WPAN/interface/patterns/ble_thread \
+-IMiddlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl \
+-IMiddlewares/ST/STM32_WPAN/interface/patterns/ble_thread/shci \
+-IMiddlewares/ST/STM32_WPAN/utilities
 
 
 
@@ -258,6 +285,109 @@ $(BUILD_DIR):
 #######################################
 clean:
 	-rm -fR $(BUILD_DIR)
+
+#######################################
+# flash targets
+#######################################
+# Flash with J-Link (Primary method)
+flash: $(BUILD_DIR)/$(TARGET).hex
+	@echo "Flashing $(TARGET) with J-Link..."
+	JLinkExe -device STM32WB55CG -if SWD -speed 4000 -autoconnect 1 -CommanderScript flash.jlink
+
+# Flash with J-Link using hex file
+flash-jlink: $(BUILD_DIR)/$(TARGET).hex
+	@echo "Flashing $(TARGET) with J-Link..."
+	@echo "Creating J-Link script..."
+	@echo "r" > flash_jlink.jlink
+	@echo "loadfile $(BUILD_DIR)/$(TARGET).hex" >> flash_jlink.jlink
+	@echo "r" >> flash_jlink.jlink
+	@echo "go" >> flash_jlink.jlink
+	@echo "exit" >> flash_jlink.jlink
+	JLinkExe -device STM32WB55CG -if SWD -speed 4000 -autoconnect 1 -CommanderScript flash_jlink.jlink
+	@rm -f flash_jlink.jlink
+
+# Flash with J-Link using binary file
+flash-jlink-bin: $(BUILD_DIR)/$(TARGET).bin
+	@echo "Flashing $(TARGET) binary with J-Link..."
+	@echo "Creating J-Link script..."
+	@echo "r" > flash_jlink_bin.jlink
+	@echo "loadbin $(BUILD_DIR)/$(TARGET).bin, 0x08000000" >> flash_jlink_bin.jlink
+	@echo "r" >> flash_jlink_bin.jlink
+	@echo "go" >> flash_jlink_bin.jlink
+	@echo "exit" >> flash_jlink_bin.jlink
+	JLinkExe -device STM32WB55CG -if SWD -speed 4000 -autoconnect 1 -CommanderScript flash_jlink_bin.jlink
+	@rm -f flash_jlink_bin.jlink
+
+# Flash with STM32CubeProgrammer (alternative)
+flash-cube: $(BUILD_DIR)/$(TARGET).hex
+	@echo "Flashing $(TARGET) with STM32CubeProgrammer..."
+	STM32_Programmer_CLI -c port=SWD -d $(BUILD_DIR)/$(TARGET).hex -rst
+
+# Flash with OpenOCD + J-Link
+flash-openocd: $(BUILD_DIR)/$(TARGET).hex
+	@echo "Flashing $(TARGET) with OpenOCD + J-Link..."
+	openocd -f interface/jlink.cfg -f target/stm32wbx.cfg -c "program $(BUILD_DIR)/$(TARGET).hex verify reset exit"
+
+# Erase flash with J-Link
+erase:
+	@echo "Erasing STM32 flash with J-Link..."
+	@echo "r" > erase_jlink.jlink
+	@echo "erase" >> erase_jlink.jlink
+	@echo "exit" >> erase_jlink.jlink
+	JLinkExe -device STM32WB55CG -if SWD -speed 4000 -autoconnect 1 -CommanderScript erase_jlink.jlink
+	@rm -f erase_jlink.jlink
+
+# Erase flash with STM32CubeProgrammer
+erase-cube:
+	@echo "Erasing STM32 flash with STM32CubeProgrammer..."
+	STM32_Programmer_CLI -c port=SWD -e all
+
+# Start J-Link GDB Server for debugging
+debug-server:
+	@echo "Starting J-Link GDB Server..."
+	@echo "J-Link GDB Server will run on port 2331"
+	JLinkGDBServer -device STM32WB55CG -if SWD -speed 4000 -port 2331 -singlerun -nogui
+
+# Connect with GDB (run in another terminal after debug-server)
+debug-gdb: $(BUILD_DIR)/$(TARGET).elf
+	@echo "Connecting with GDB..."
+	@echo "Make sure J-Link GDB Server is running (make debug-server)"
+	@echo "Commands to use in GDB:"
+	@echo "  target remote localhost:2331"
+	@echo "  load"
+	@echo "  monitor reset"
+	@echo "  continue"
+	arm-none-eabi-gdb $(BUILD_DIR)/$(TARGET).elf
+
+# Start J-Link RTT Viewer for real-time debugging
+debug-rtt:
+	@echo "Starting J-Link RTT Viewer..."
+	JLinkRTTViewer
+
+# Flash wireless stack (needs to be downloaded separately)
+flash-wireless:
+	@echo "Flash the wireless stack using J-Link:"
+	@echo "JLinkExe -device STM32WB55CG -if SWD -speed 4000"
+	@echo "Then in J-Link: loadbin stm32wb5x_BLE_Stack_light_fw.bin,0x080CB000"
+	@echo "Download wireless stack from: https://www.st.com/en/embedded-software/stm32cubewb.html"
+
+# Show help
+flash-help:
+	@echo "Available flash targets:"
+	@echo "  flash           - Flash application with J-Link"
+	@echo "  flash-jlink     - Flash application with J-Link (dynamic script)"
+	@echo "  flash-jlink-bin - Flash binary with J-Link"
+	@echo "  flash-cube      - Flash application with STM32CubeProgrammer"
+	@echo "  flash-openocd   - Flash application with OpenOCD + J-Link"
+	@echo "  erase           - Erase entire flash with J-Link"
+	@echo "  erase-cube      - Erase entire flash with STM32CubeProgrammer"
+	@echo "  debug-server    - Start J-Link GDB Server"
+	@echo "  debug-gdb       - Connect GDB to J-Link"
+	@echo "  debug-rtt       - Start J-Link RTT Viewer"
+	@echo "  flash-wireless  - Instructions for flashing wireless stack"
+	@echo "  flash-help      - Show this help"
+
+.PHONY: flash flash-jlink flash-jlink-bin flash-cube flash-openocd erase erase-cube debug-server debug-gdb debug-rtt flash-wireless flash-help
   
 #######################################
 # dependencies

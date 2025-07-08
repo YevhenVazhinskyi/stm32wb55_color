@@ -9,10 +9,7 @@ extern "C" {
 
 extern IPCC_HandleTypeDef hipcc;
 
-
-void MX_IPCC_Init(void);
-void MX_RF_Init(void);
-
+void rf_init(void);
 
 #ifdef __cplusplus
 }

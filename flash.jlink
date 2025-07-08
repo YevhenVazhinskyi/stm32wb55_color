@@ -1,7 +1,19 @@
-device STM32WB55CG
-if swd
-speed 4000
+# J-Link script for STM32WB55 flashing
+# Device: STM32WB55CG
+# Interface: SWD
+# Speed: 4000 kHz
+
+# Reset and halt the target
 r
-loadfile build/stm32wb55_color.elf
+
+# Load the hex file
+loadfile build/stm32wb55_color.hex
+
+# Reset the target
 r
+
+# Start execution
+go
+
+# Exit J-Link
 exit

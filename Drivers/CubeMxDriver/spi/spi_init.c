@@ -1,3 +1,5 @@
+
+/*
 #include "spi_init.h"   
 
 
@@ -9,11 +11,10 @@ SPI_HandleTypeDef hspi1;
   * @param None
   * @retval None
   */
-void MX_SPI1_Init(void)
-{
-
-  
-  /* SPI1 parameter configuration*/
+//void MX_SPI1_Init(void)
+//{
+ 
+   /*
   hspi1.Instance = SPI1;
   hspi1.Init.Mode = SPI_MODE_MASTER;
   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
@@ -32,5 +33,5 @@ void MX_SPI1_Init(void)
   {
     Error_Handler();
   }
-
-}
+  */ 
+//}
