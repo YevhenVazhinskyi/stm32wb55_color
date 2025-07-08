@@ -120,7 +120,7 @@ coverage/
 .env.*.local
 
 # Optional: Ignore large libraries if they can be downloaded
-# STM32CubeWB/ (uncomment if you want to ignore the large STM32CubeWB directory)
+STM32CubeWB/
 
 # Keep important project files but ignore build artifacts
 !*.c
